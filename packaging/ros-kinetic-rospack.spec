@@ -25,9 +25,6 @@ Requires:       python-devel
 Requires:       python-rosdep
 Requires:       tinyxml-devel
 
-%define         install_path /opt/ros/kinetic
-%define         src_name rospack
-
 %description
 ROS Package Tool
 
@@ -40,6 +37,7 @@ cp %{SOURCE1001} .
 # in the install tree that was dropped by catkin, and source it.  It will
 # set things like CMAKE_PREFIX_PATH, PKG_CONFIG_PATH, and PYTHONPATH.
 if [ -f "/usr/setup.sh" ]; then . "/usr/setup.sh"; fi
+%define install_path $(echo ${CMAKE_PREFIX_PATH})
 mkdir build && cd build
 cmake .. \
         -DCMAKE_INSTALL_PREFIX="%{install_path}" \
@@ -49,8 +47,6 @@ cmake .. \
 
 make %{?_smp_mflags}
 
-#        -DCMAKE_INSTALL_PREFIX="%{install_path}" \
-#        -DCMAKE_PREFIX_PATH="%{install_path}" \
 %install
 # In case we're installing to a non-standard location, look for a setup.sh
 # in the install tree that was dropped by catkin, and source it.  It will
