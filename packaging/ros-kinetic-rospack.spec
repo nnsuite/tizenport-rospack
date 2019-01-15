@@ -43,7 +43,7 @@ cmake .. \
         -DCMAKE_INSTALL_PREFIX="%{install_path}" \
         -DCMAKE_PREFIX_PATH="%{install_path}" \
         -DSETUPTOOLS_DEB_LAYOUT=OFF \
-        -DCATKIN_BUILD_BINARY_PACKAGE="1" 
+        -DCATKIN_BUILD_BINARY_PACKAGE="1"
 
 make %{?_smp_mflags}
 
