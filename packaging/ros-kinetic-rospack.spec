@@ -1,5 +1,5 @@
 Name:           ros-kinetic-rospack
-Version:        2.3.3
+Version:        2.4.4
 Release:        0%{?dist}
 Summary:        ROS rospack package
 Group:          Development/Libraries
