@@ -7,6 +7,7 @@ License:        BSD
 URL:            http://www.ros.org/wiki/rospack
 Source0:        %{name}-%{version}.tar.gz
 Source1001:     %{name}.manifest
+Patch0:		0001-Replaced-references-to-deprecated-Boost.TR1.patch
 BuildRequires:  cmake
 BuildRequires:  gcc-c++
 BuildRequires:  boost-devel
@@ -30,6 +31,7 @@ ROS Package Tool
 
 %prep
 %setup -q
+%patch0 -p1
 cp %{SOURCE1001} .
 
 %build
